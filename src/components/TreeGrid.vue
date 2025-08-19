@@ -58,7 +58,7 @@ export default defineComponent({
     const getDataPath: GetDataPath = (data: RowItem) => data.__path
 
     const colDefs = ref<ColDef[]>([
-      { field: "id", headerName: "№ п/п", valueGetter: params => (params.node ? params.node.rowIndex + 1 : null), width: 100 },
+      { field: "id", headerName: "№ п/п", valueGetter: params => (params.node?.rowIndex ?? -1) + 1, width: 100 },
       {
         headerName: "Категория",
         field: "parent",
